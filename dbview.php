@@ -165,6 +165,7 @@
              $('#insert_form')[0].reset();
              $('#add_data_Modal').modal('hide');
              $('#enterprise_table').html(data);
+             console.log("success II");
            }
          });
        }

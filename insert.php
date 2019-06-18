@@ -13,7 +13,7 @@
       {  
            $query = "  
            UPDATE Entreprises_Table   
-           SET name='$nom',   
+           SET nom='$nom',   
            adresse='$adresse',   
            categorie='$categorie',   
            designation = '$designation',   
