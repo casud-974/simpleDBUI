@@ -1,6 +1,6 @@
 <?php
 $dBServername = "localhost";
-$dBUsername = "phpmyadminuser";
+$dBUsername = "phpadmin";
 $dBPassword = "mypsw";
 $dBName = "richDB";
 

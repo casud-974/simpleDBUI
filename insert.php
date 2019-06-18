@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "phpmyadminuser", "mypsw", "richDB");  
+ $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB");  
  if(!empty($_POST))  
  {  
       $output = '';  

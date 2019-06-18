@@ -2,7 +2,7 @@
  if(isset($_POST["entreprise_id"]))  
  {  
       $output = '';  
-      $connect = mysqli_connect("localhost", "phpmyadminuser", "mypsw", "richDB");  
+      $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB");  
       $query = "SELECT * FROM Entreprises_Table WHERE id = '".$_POST["entreprise_id"]."'";  
        mysqli_set_charset($connect,"utf8");
       $result = mysqli_query($connect, $query);  

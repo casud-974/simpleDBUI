@@ -3,7 +3,7 @@
  //https://www.webslesson.info/2016/10/php-ajax-update-mysql-data-through-bootstrap-modal.html
  //
  header('Content-Type: text/html; charset=utf-8');
- $connect = mysqli_connect("localhost", "phpmyadminuser", "mypsw", "richDB");  
+ $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB");  
  $query = "SELECT * FROM Entreprises_Table ORDER BY id DESC";  
   mysqli_set_charset($connect,"utf8");
  $result = mysqli_query($connect, $query);  

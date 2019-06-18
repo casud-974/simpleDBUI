@@ -1,6 +1,6 @@
   <?php  
  //fetch.php  
-  $connect = mysqli_connect("localhost", "phpmyadminuser", "mypsw", "richDB"); 
+  $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB"); 
   mysqli_set_charset($connect,"utf8"); 
   if(isset($_POST["entreprise_id"]))  
   {  
