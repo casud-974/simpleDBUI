@@ -1,5 +1,6 @@
 <?php  
- $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB");  
+ $connect = mysqli_connect("localhost", "phpadmin", "mypsw", "richDB"); 
+ mysqli_set_charset( $connect, 'utf8'); 
  if(!empty($_POST))  
  {  
       $output = '';  
