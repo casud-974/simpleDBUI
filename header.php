@@ -9,7 +9,7 @@ require "includes/dbh.inc.php";
 
 <head>
   <meta charset="utf-8">
-  <title>DB Entreprise CASUD / SAT</title>
+  <title>DB Entreprises CASUD / SAT</title>
   <meta name="description" content="This is an atempt at the dead simple DB UI.">
   <meta name=viewport content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,6 @@ require "includes/dbh.inc.php";
 </head>
 
 <body>
-
   <!-- Here is the header where I decided to include the login form for this tutorial. -->
   <header>
     <nav class="nav-header-main">
