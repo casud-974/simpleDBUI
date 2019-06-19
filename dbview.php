@@ -24,7 +24,7 @@
      <div id="enterprise_table">
        <table class="table table-bordered">
          <tr>
-           <th width="70%">Entreprise</th>
+           <th width="70%">Raison sociale</th>
            <th width="15%">Editer</th>
            <th width="15%">Voir</th>
          </tr>
@@ -80,10 +80,6 @@
            <br />
            <label>Entrez la catégorie</label>
            <textarea name="categorie" id="categorie" class="form-control"></textarea>
-           <!--<select name="categorie" id="categorie" class="form-control">  
-      <option value="Male">Male</option>  
-      <option value="Female">Female</option>  
-      </select>-->
            <br />
            <label>Entrez la designation</label>
            <input type="text" name="designation" id="designation" class="form-control" />
@@ -91,6 +87,17 @@
            <label>Entrez le Gérant</label>
            <input type="text" name="gerant" id="gerant" class="form-control" />
            <!-- <input type="text" name="age" id="age" class="form-control" />   -->
+           <br />
+           <label>Entrez le Téléphone</label>
+           <input type="text" name="telephone" id="telephone" class="form-control" />
+           <br />
+           <label>Entrez le Status</label>
+           <!-- <input type="text" name="status" id="status" class="form-control" />-->
+           <select name="status" id="status" class="form-control">
+             <option value="Active">Active</option>
+             <option value="Fermée">Fermée</option>
+             <option value="En suspens">En suspens</option>
+           </select>
            <br />
            <input type="hidden" name="entreprise_id" id="entreprise_id" />
            <input type="submit" name="insert" id="insert" value="insert" class="btn btn-success" />
@@ -108,7 +115,7 @@
 
      //ADD ENTRY
      $('#add').click(function() {
-      console.log("open Ajouter");
+       console.log("open Ajouter");
        $('#insert').val("Ajouter");
        $('#insert_form')[0].reset();
      });
@@ -130,6 +137,8 @@
            $('#categorie').val(data.categorie);
            $('#designation').val(data.designation);
            $('#gerant').val(data.gerant);
+           $('#telephone').val(data.telephone);
+           $('#status').val(data.status);
            $('#entreprise_id').val(data.id);
            $('#insert').val("Mettre à jour");
            $('#add_data_Modal').modal('show');
@@ -137,9 +146,9 @@
        });
      });
 
-    //INSERT FORM
+     //INSERT FORM
      $('#insert_form').on("submit", function(event) {
-      console.log("Insert Data");
+       console.log("Insert Data");
        event.preventDefault();
        if ($('#nom').val() == "") {
          alert("Entrez le nom");
@@ -151,17 +160,19 @@
          alert("entrez la categorie");
        } else if ($('#gerant').val() == '') {
          alert("entrez le gérant");
+       } else if ($('#status').val() == '') {
+         alert("entrez le status");
        } else {
          $.ajax({
            url: "insert.php",
            method: "POST",
            data: $('#insert_form').serialize(),
            beforeSend: function() {
-            console.log("beforeSend");
+             console.log("beforeSend");
              $('#insert').val("...en cours");
            },
            success: function(data) {
-            console.log("success");
+             console.log("success");
              $('#insert_form')[0].reset();
              $('#add_data_Modal').modal('hide');
              $('#enterprise_table').html(data);
@@ -173,7 +184,7 @@
 
      //VIEW
      $(document).on('click', '.view_data', function() {
-      console.log("open Voir");
+       console.log("open Voir");
        var entreprise_id = $(this).attr("id");
        if (entreprise_id != '') {
          $.ajax({

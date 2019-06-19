@@ -10,6 +10,8 @@
       $categorie = mysqli_real_escape_string($connect, $_POST["categorie"]);  
       $designation = mysqli_real_escape_string($connect, $_POST["designation"]);  
       $gerant = mysqli_real_escape_string($connect, $_POST["gerant"]);  
+      $telephone = mysqli_real_escape_string($connect, $_POST["telephone"]);  
+      $status = mysqli_real_escape_string($connect, $_POST["status"]);  
       if($_POST["entreprise_id"] != '')  
       {  
            $query = "  
@@ -18,15 +20,17 @@
            adresse='$adresse',   
            categorie='$categorie',   
            designation = '$designation',   
-           gerant = '$gerant'   
+           gerant = '$gerant',
+           telephone = '$telephone',
+           status = '$status'  
            WHERE id='".$_POST["entreprise_id"]."'";  
            $message = 'Data Updated';  
       }  
       else  
       {  
            $query = "  
-           INSERT INTO Entreprises_Table(nom, adresse, categorie, designation, gerant)  
-           VALUES('$nom', '$adresse', '$categorie', '$designation', '$gerant');  
+           INSERT INTO Entreprises_Table(nom, adresse, categorie, designation, gerant, telephone, status)  
+           VALUES('$nom', '$adresse', '$categorie', '$designation', '$gerant', '$telephone', '$status');  
            ";  
            $message = 'Data Inserted';  
       }  

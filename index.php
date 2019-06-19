@@ -16,7 +16,6 @@ require "header.php";
           echo '<p class="signuperror">Utilisateur inconnu</p> </BR>';
         }
 
-
         if (!isset($_SESSION['id'])) {
 
           // Here we create an error message if the user made an error trying to sign up.
@@ -32,17 +31,13 @@ require "header.php";
             }
 
           }
-
           echo '<p class="login-status">Identifiez vous</BR>pour acceder à la base de données</p>';
-
         }
-
 
         else if (isset($_SESSION['id'])) {
          // echo '<p class="login-status">Vous êtes dedans !</p>';
          require "dbview.php";
         }
-
 
         ?>
       </section>
